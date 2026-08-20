@@ -1,0 +1,37 @@
+# Failure brief: [TODO: one-line summary of the failure]
+
+Source log: `task/case.log`
+
+## Failed test name
+
+[TODO: the test case name exactly as the run output printed it]
+
+## First meaningful error (one log line)
+
+The first line that states what actually went wrong, not the last error and not the loudest one. Quote it verbatim:
+
+```
+[TODO: paste exactly one line here]
+```
+
+## Stack trace root frame
+
+The first `at ...` frame from the project's own code (`actions/` or `pages/`), reading the printed trace top to bottom, quoted verbatim:
+
+```
+[TODO: paste the frame here]
+```
+
+## Relevant evidence from the transcript (3-5 lines, verbatim)
+
+The lines that carry actual evidence about the cause: test output, logcat, or the failure artifacts inspected at the end of the transcript. Every line must be a whole line of case.log, copied unchanged:
+
+```
+[TODO: 3-5 lines copied exactly from case.log]
+```
+
+## Suspected layer
+
+Layer: [TODO: app / tests / environment / unknown]
+
+Justification (one sentence): [TODO]

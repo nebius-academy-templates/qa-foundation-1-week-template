@@ -1,0 +1,166 @@
+student@qa-lab:~/ai-qa-sandbox$ ./scripts/run-suite.sh
+=== Building stable debug APK ===
+
+BUILD SUCCESSFUL in 6s
+44 actionable tasks: 44 up-to-date
+=== Checking connected devices ===
+=== Disabling animations (UiAutomator2 can't locate elements under a live overlay animation, e.g. the nav drawer) ===
+=== Resetting sandbox states ===
+=== Running Appium suite against stable APK ===
+
+> Task :appium-tests:test
+
+Gradle Test Executor 1 STANDARD_ERROR
+    SLF4J(W): No SLF4J providers were found.
+    SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+    SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+
+DriverSignupTest > Driver signup form validates and submits PASSED
+
+DriverSignupValidationTest > Whitespace only driver signup input is rejected PASSED
+
+DriverSignupValidationTest > Success message replaces the earlier validation error PASSED
+
+GeoOnboardingTest > Location request shows a processing overlay PASSED
+
+GeoOnboardingTest > Backend error keeps the user on location onboarding PASSED
+
+MapSearchTest > Find offers stays disabled until a destination is entered PASSED
+
+MapSearchTest > Ride search lists three tariffs with prices PASSED
+
+MapSearchTest > Slow backend keeps the loading indicator visible PASSED
+
+MapSearchTest > Backend error on search offers a retry PASSED
+
+MapSearchTest > Minivan tariff hides while unavailable PASSED
+
+OnboardingSmokeTest > Ride options show prices after search PASSED
+
+OnboardingSmokeTest > Full onboarding opens the map PASSED
+
+OnboardingSmokeTest > Wrong OTP shows an error PASSED
+
+OrderHistoryStateTest > Backend error shows the order history error PASSED
+
+OrderHistoryTest > Order history shows past orders with prices STANDARD_OUT
+    ArtifactsOnFailure: saved failure artifacts to /home/student/ai-qa-sandbox/appium-tests/build/reports/failures (Order_history_shows_past_orders_with_prices-1783065438187.png / .logcat / .xml)
+
+OrderHistoryTest > Order history shows past orders with prices FAILED
+    org.opentest4j.AssertionFailedError: price of order 1 ==> expected: <29.70 €> but was: <31.20 €>
+        at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1160)
+        at app//actions.OrderActions.assertHistoryPrices(OrderActions.kt:11)
+        at app//tests.OrderHistoryTest.testOrderHistoryShowsPrices$lambda$2(OrderHistoryTest.kt:23)
+        at app//rule.AppiumTestCase.step$lambda$0(AppiumTestCase.kt:86)
+        at app//io.qameta.allure.Allure.lambda$step$0(Allure.java:113)
+        at app//io.qameta.allure.Allure.lambda$step$1(Allure.java:127)
+        at app//io.qameta.allure.Allure.step(Allure.java:181)
+        at app//io.qameta.allure.Allure.step(Allure.java:125)
+        at app//io.qameta.allure.Allure.step(Allure.java:112)
+        at app//rule.AppiumTestCase.step(AppiumTestCase.kt:86)
+        at app//tests.OrderHistoryTest.testOrderHistoryShowsPrices(OrderHistoryTest.kt:22)
+        at java.base@17.0.10/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+        at java.base@17.0.10/java.lang.reflect.Method.invoke(Method.java:580)
+        at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:700)
+        at app//org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:528)
+
+OtpValidationTest > Extra OTP digits beyond four are ignored PASSED
+
+OtpValidationTest > Correct OTP after a wrong attempt signs in PASSED
+
+OtpValidationTest > OTP resend is locked by a cooldown PASSED
+
+PasskeyPromoTest > Skip on the passkey promo continues to location onboarding PASSED
+
+PasskeyPromoTest > Create a passkey continues to location onboarding PASSED
+
+PhoneLoginValidationTest > Short phone shows a validation error PASSED
+
+PhoneLoginValidationTest > Phone input keeps digits only PASSED
+
+PhoneLoginValidationTest > Eight digit phone opens the OTP screen PASSED
+
+PhoneLoginValidationTest > Phone form is empty after returning from OTP PASSED
+
+RegionBannerTest > Region banner shows and hides with the sandbox state PASSED
+
+RegionBannerTest > Region banner does not block ride search PASSED
+
+RideAndHistoryE2ETest > Search a ride then check order history STANDARD_OUT
+    ArtifactsOnFailure: saved failure artifacts to /home/student/ai-qa-sandbox/appium-tests/build/reports/failures (Search_a_ride_then_check_order_history-1783065528693.png / .logcat / .xml)
+
+RideAndHistoryE2ETest > Search a ride then check order history FAILED
+    org.opentest4j.AssertionFailedError: price of order 1 ==> expected: <29.70 €> but was: <31.20 €>
+        at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1160)
+        at app//actions.OrderActions.assertHistoryPrices(OrderActions.kt:11)
+        at app//tests.RideAndHistoryE2ETest.testSearchRideThenCheckHistory$lambda$4(RideAndHistoryE2ETest.kt:33)
+        at app//rule.AppiumTestCase.step$lambda$0(AppiumTestCase.kt:86)
+        at app//io.qameta.allure.Allure.lambda$step$0(Allure.java:113)
+        at app//io.qameta.allure.Allure.lambda$step$1(Allure.java:127)
+        at app//io.qameta.allure.Allure.step(Allure.java:181)
+        at app//io.qameta.allure.Allure.step(Allure.java:125)
+        at app//io.qameta.allure.Allure.step(Allure.java:112)
+        at app//rule.AppiumTestCase.step(AppiumTestCase.kt:86)
+        at app//tests.RideAndHistoryE2ETest.testSearchRideThenCheckHistory(RideAndHistoryE2ETest.kt:32)
+        at java.base@17.0.10/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+        at java.base@17.0.10/java.lang.reflect.Method.invoke(Method.java:580)
+        at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:700)
+        at app//org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:528)
+
+27 tests completed, 2 failed
+
+> Task :appium-tests:test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':appium-tests:test'.
+> There were failing tests. See the report at: file:///home/student/ai-qa-sandbox/appium-tests/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 11m 42s
+3 actionable tasks: 1 executed, 2 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html
+student@qa-lab:~/ai-qa-sandbox$ ls appium-tests/build/reports/failures/
+Order_history_shows_past_orders_with_prices-1783065438187.logcat
+Order_history_shows_past_orders_with_prices-1783065438187.png
+Order_history_shows_past_orders_with_prices-1783065438187.xml
+Search_a_ride_then_check_order_history-1783065528693.logcat
+Search_a_ride_then_check_order_history-1783065528693.png
+Search_a_ride_then_check_order_history-1783065528693.xml
+student@qa-lab:~/ai-qa-sandbox$ tail -n 20 appium-tests/build/reports/failures/Order_history_shows_past_orders_with_prices-1783065438187.logcat
+07-03 09:57:12.106  1794  1823 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sandbox.qa/.MainActivity (has extras)} from uid 2000
+07-03 09:57:12.243  7268  7268 I com.sandbox.qa: Late-enabling -Xcheck:jni
+07-03 09:57:13.481  7268  7268 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10154; state: ENABLED
+07-03 09:57:14.512  4117  4139 I appium: Find element using selector: BySelector[RES='map_search_button']
+07-03 09:57:14.548  4117  4139 I appium: Successfully found element with selector: BySelector[RES='map_search_button']
+07-03 09:57:14.902  7268  7302 D EGL_emulation: app_time_stats: avg=8.90ms min=2.71ms max=31.42ms count=59
+07-03 09:57:15.113  4117  4139 I appium: Find element using selector: BySelector[RES='map_menu_button']
+07-03 09:57:15.126  4117  4139 I appium: Successfully found element with selector: BySelector[RES='map_menu_button']
+07-03 09:57:15.271  4117  4139 I appium: channel read: POST /session/9b21c4d7-33f5-4f1e-8f02-6de1a47c9a30/element/00000000-0000-0037-ffff-ffff00000014/click
+07-03 09:57:15.804  4117  4139 I appium: Find element using selector: BySelector[RES='drawer_orders_item']
+07-03 09:57:15.815  4117  4139 I appium: Successfully found element with selector: BySelector[RES='drawer_orders_item']
+07-03 09:57:15.933  4117  4139 I appium: channel read: POST /session/9b21c4d7-33f5-4f1e-8f02-6de1a47c9a30/element/00000000-0000-0037-ffff-ffff00000015/click
+07-03 09:57:16.520  7268  7291 I com.sandbox.qa: Background concurrent copying GC freed 28219(2166KB) AllocSpace objects, 12(360KB) LOS objects, 50% free, 3388KB/6776KB, paused 129us total 92.311ms
+07-03 09:57:16.881  4117  4139 I appium: Find element using selector: BySelector[RES='orders_title']
+07-03 09:57:16.893  4117  4139 I appium: Successfully found element with selector: BySelector[RES='orders_title']
+07-03 09:57:17.104  4117  4139 I appium: Find element using selector: BySelector[RES='order_price_1']
+07-03 09:57:17.117  4117  4139 I appium: Successfully found element with selector: BySelector[RES='order_price_1']
+07-03 09:57:17.202  4117  4139 I appium: channel read: GET /session/9b21c4d7-33f5-4f1e-8f02-6de1a47c9a30/element/00000000-0000-0037-ffff-ffff00000018/text
+07-03 09:57:17.564  7268  7302 D EGL_emulation: app_time_stats: avg=9.71ms min=2.88ms max=28.63ms count=62
+07-03 09:57:18.010  4117  4139 I appium: channel read: GET /session/9b21c4d7-33f5-4f1e-8f02-6de1a47c9a30/screenshot
+student@qa-lab:~/ai-qa-sandbox$ grep -oE 'text="[0-9]+\.[0-9]{2} €"' appium-tests/build/reports/failures/Order_history_shows_past_orders_with_prices-1783065438187.xml
+text="31.20 €"
+text="14.50 €"
+text="9.80 €"
+student@qa-lab:~/ai-qa-sandbox$
